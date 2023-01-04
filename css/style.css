@@ -8,7 +8,7 @@
 /**Boot Css**/
 img{
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
 }
 .center{
     max-width: 1280px;
@@ -17,6 +17,7 @@ img{
 }
 .w33{
     width: 33.3%;
+    padding: 0 10px;
 }
 .w50{
     padding: 0 10px;
@@ -42,7 +43,11 @@ header{
 header .logo{
     font-size: 25px;
     font-weight: 300;
-    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.logo a{
+    text-decoration: none;
     color: white;
 }
 
@@ -68,6 +73,10 @@ nav.desktop li{
 nav.desktop a{
     color: white;
     text-decoration: none;
+}
+
+nav.desktop a:hover{
+    text-decoration: underline;
 }
 
 section.banner-principal{
@@ -131,7 +140,8 @@ section.banner-principal form input[type=submit]{
 }
 
 section.descricao-autor{
-    padding: 30px 0;
+    padding: 40px 0;
+    color: #444;
 }
 
 section.descricao-autor h2{
@@ -141,8 +151,144 @@ section.descricao-autor h2{
 
 section.descricao-autor p{
     font-size: 16px;
-    color: #444;
+    
+    font-weight: 300;
     margin-top: 10px;
+}
+
+section.especialidades{
+    padding: 40px 0;
+    background: #e2e2e2;
+}
+
+section.especialidades h2.title{
+    font-size: 30px;
+    font-weight: 400;
+    color: #999;
+    text-align: center;
+}
+
+.box-especialidade{
+    margin: 40px 0;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.box-especialidade h3{
+    color: #404580;
+    font-size: 40px;
+}
+
+.box-especialidade h4{
+    font-weight: 300;
+    font-size: 25px;
+    color: #bababa;
+}
+
+.box-especialidade p{
+    color: #444;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+section.extras{
+    padding: 30px 0;
+    background: #404580;
+}
+
+.servicos-container,.depoimentos-container{
+    padding: 0 50px;
+}
+
+section.extras .title{
+    color: white;
+    font-weight: 300;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.depoimento-single{
+    padding: 15px 0;
+    border-bottom: 1px solid #5056a0;
+}
+
+p.depoimento-descricao{
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+}
+
+.nome-autor{
+    font-size: 15px;
+    color: white;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.servicos ul{
+    margin: 20px 0;
+    /* list-style-position: inside; */
+}
+
+.servicos li{
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+footer{
+    background: #313462;
+    padding: 30px 0;
+}
+
+footer p{
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+section.erro-404{
+    
+    min-height: 600px;
+    padding: 30px 0;
+}
+
+section.erro-404 h2{
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #444;
+    font-weight: 400;
+    border-top: 2px solid #444;
+}
+
+/***RESPONSIVO***/
+
+@media screen and (max-width: 768px){
+    img{
+        float: none !important;
+        display: block;
+        margin: 0 auto;
+    }
+   
+    .w50{
+        padding: 20px;
+        width: 100%;
+    }
+
+    .w33{
+        width: 100%;
+        padding: 20px;
+    }
+    .box-especialidade{
+        padding: 40px 20px;
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 700px){
@@ -183,18 +329,5 @@ section.descricao-autor p{
         display: block;
         color: #444e;
         text-decoration: none;
-    }
-}
-
-@media screen and (max-width: 768px){
-    img{
-        float: none !important;
-        display: block;
-        margin: 0 auto;
-        max-width: 500px;
-    }
-    .w50{
-        padding: 20px;
-        width: 100%;
     }
 }
