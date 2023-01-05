@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="palavras-chave,do,meu,site">
     <meta name="description" content="Descrição do meu website">
-    <meta name="author" content="Eduardo Ferrari">
 
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH ?>css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -48,12 +47,13 @@
         include('pages/'.$url.'.php');
     }else{
         //Podemos Fazer o quiser, pois a página não existe
+        $pagina404 = true;
         include('pages/404.php');
     }
 
 ?>
 
-<footer>
+<footer <?php if(isset($pagina404) && $pagina404 == true) echo 'class="fixed"'; ?>>
     <div class="center">
         <p>Todos os direitos reservados</p>
     </div>
