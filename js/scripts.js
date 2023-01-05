@@ -30,9 +30,14 @@ $(function(){
             icone.addClass('fa-sharp fa-solid fa-bars');
             listaMenu.slideToggle();
         }
-            
-
     
         //<i class="fa-solid fa-circle-xmark"></i>
     })
+
+    if($('target').length > 0){
+        //O elemento existe, precisamos dar o scrolle em algum elemento.
+        var elemento = '#'+$('target').attr('target');
+        var divScroll = $(elemento).offset().top;
+        $('html,body').animate({'scrollTop':divScroll},2000);
+    }
 })

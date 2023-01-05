@@ -1,14 +1,17 @@
-<section class="banner-principal">
+<section class="banner-container">
+    <div style="background-image: url('<?php echo INCLUDE_PATH; ?>/image/bg-form.jpg')" class="banner-single"></div><!--BANNER-SINGLE-->
+    <div style="background-image: url('<?php echo INCLUDE_PATH; ?>/image/bg-form2.jpg')" class="banner-single"></div><!--BANNER-SINGLE-->
+    <div style="background-image: url('<?php echo INCLUDE_PATH; ?>/image/bg-form3.jpg')" class="banner-single"></div><!--BANNER-SINGLE-->
     <div class="overlay"></div><!--OVERLAY-->
     <div class="center">
         <form action="">
             <h2>Qual o seu melhor e-mail</h2>
             <input type="email" name="email" required>
             <input type="submit" name="acao" value="Cadastrar!">
-        </form>
-        
+        </form>   
     </div><!--CENTER-->
-</section><!--Banner-Principal-->
+    <div class="bullets"><!--adicionado de forma dinâmica--></div><!--BULLETS-->
+</section><!--Banner-Container-->
 
 <section class="descricao-autor">
     <div class="center">
@@ -24,7 +27,7 @@
     </div><!--CENTER-->
 </section><!--Descricao-Autor-->
 
-<section class="especialidades">
+<section id="especialidades" class="especialidades">
     <div class="center">
         <h2 class="title">Especialidades</h2>
         <div class="w33 left box-especialidade">
@@ -64,7 +67,7 @@
             </div><!--Depoimento-single-->
         </div><!--W50-->
 
-        <div class="w50 left servicos-container">
+        <div id="servicos" class="w50 left servicos-container">
             <h2 class="title">Serviços</h2>
             <div class="servicos">
                 <ul>

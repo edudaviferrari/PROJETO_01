@@ -14,13 +14,25 @@
     <title>Projeto 01</title>
 </head>
 <body>
+
+    <?php
+    $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+        switch($url){
+            case 'especialidades':
+                echo '<target target="especialidades" />';
+                break;
+            case 'servicos':
+                echo '<target target="servicos" />';
+        }
+    ?>
+
 <header>
     <div class="center">
         <div class="logo left"><a href="<?php echo INCLUDE_PATH ?>">Logomarca</a></div><!--LOGO-->
         <nav class="desktop right">
             <ul>
                 <li><a href="<?php echo INCLUDE_PATH ?>">Home</a></li>
-                <li><a href="<?php echo INCLUDE_PATH ?>sobre">Sobre</a></li>
+                <li><a href="<?php echo INCLUDE_PATH ?>especialidades">Especialidades</a></li>
                 <li><a href="<?php echo INCLUDE_PATH ?>servicos">Serviços</a></li>
                 <li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
             </ul>
@@ -30,7 +42,7 @@
             <div class="botao-menu-mobile"><i class="fa-sharp fa-solid fa-bars"></i></div>
             <ul>
                 <li><a href="<?php echo INCLUDE_PATH ?>">Home</a></li>
-                <li><a href="<?php echo INCLUDE_PATH ?>sobre">Sobre</a></li>
+                <li><a href="<?php echo INCLUDE_PATH ?>especialidades">Especialidades</a></li>
                 <li><a href="<?php echo INCLUDE_PATH ?>servicos">Serviços</a></li>
                 <li><a href="<?php echo INCLUDE_PATH ?>contato">Contato</a></li>
             </ul>
@@ -41,14 +53,18 @@
 
 <?php
 
-    $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+    
 
     if(file_exists('pages/'.$url.'.php')){
         include('pages/'.$url.'.php');
     }else{
         //Podemos Fazer o quiser, pois a página não existe
-        $pagina404 = true;
-        include('pages/404.php');
+        if($url != 'especialidades' && $url != 'servicos'){
+            $pagina404 = true;
+            include('pages/404.php');
+        }else{
+            include('pages/home.php');
+        }
     }
 
 ?>
@@ -61,5 +77,10 @@
 
 <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
 <script src="<?php echo INCLUDE_PATH ?>js/scripts.js"></script>
+<?php
+    if($url == 'home' || $url == ''){
+?>
+    <script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
+<?php } ?>
 </body>
 </html>
