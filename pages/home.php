@@ -4,9 +4,11 @@
     <div style="background-image: url('<?php echo INCLUDE_PATH; ?>/image/bg-form3.jpg')" class="banner-single"></div><!--BANNER-SINGLE-->
     <div class="overlay"></div><!--OVERLAY-->
     <div class="center">
-        <form action="">
+        
+        <form method="post" action="">
             <h2>Qual o seu melhor e-mail</h2>
             <input type="email" name="email" required>
+            <input type="hidden" name="identificador" value="form_home">
             <input type="submit" name="acao" value="Cadastrar!">
         </form>   
     </div><!--CENTER-->

@@ -1,4 +1,6 @@
-<?php include('config.php') ?>
+<?php 
+    require('config.php'); //chamando o arquivo config.php
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,6 +17,53 @@
     <title>Projeto 01</title>
 </head>
 <body>
+<?php
+    if(isset($_POST['acao']) && $_POST['identificador'] == 'form_home'){
+        //Enviei o formulário
+        if($_POST['email'] != ''){
+            $email = $_POST['email'];
+            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+                //Tudo certo, é um email // Só enviar
+                $mail = new Email('smtp.kinghost.net','teste@clickvix.com.br','Click#2023','Teste Projeto Cadastro');
+                $mail->enviarPara('multivixcopiadora@gmail.com','Teste Email');
+                $corpo = "E-mail cadastrado na home do site:<hr>$email";
+                $info = array('Assunto'=>"Um Novo e-mail cadastrado",'Corpo'=>$corpo);
+                $mail->formatarEmail($info);
+                if($mail->enviarEmail()){
+                    echo '<script>alert("Enviado com sucesso!")</script>';
+                }else{
+                    echo '<script>alert("Algo deu errado")</script>';
+                }
+            }else{
+                echo '<script>alert("Não é um e-mail válido!")</script>';
+            }
+        }else{
+            echo '<script>alert("Campos vazios não são permitidos!")</script>';
+        }
+        
+    }else if(isset($_POST['acao']) && $_POST['identificador'] == 'form_contato'){
+        /*
+        $nome =$_POST['nome'];
+        $email = $_POST['email'];
+        $mensagem = $_POST['mensagem'];
+        $telefone = $_POST['telefone'];*/
+        $assunto = 'Nova Mensagem do Site!';
+        $corpo = '';
+        foreach ($_POST as $key => $value){
+            $corpo.=ucfirst($key).": ".$value;
+            $corpo.="<hr>";
+        }
+        $info = ['Assunto'=>$assunto,'Corpo'=>$corpo];
+        $mail = new Email('smtp.kinghost.net','teste@clickvix.com.br','Click#2023','Teste Projeto Cadastro');
+        $mail->enviarEmail('multivixcopiadora@gmail.com','Teste Email');
+        $mail->formatarEmail($info);
+        if($mail->enviarEmail()){
+            echo '<script>alert("Enviado com sucesso!")</script>';
+        }else{
+            echo '<script>alert("Algo deu errado")</script>';
+        }
+    }
+?>
 <base base="<?php INCLUDE_PATH; ?>" />
     <?php
     $url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -27,7 +76,7 @@
         }
     ?>
 
-    <?php new Email(); ?>
+
 
 <header>
     <div class="center">

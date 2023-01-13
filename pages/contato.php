@@ -3,15 +3,16 @@
 </div>
 <div class="contato-container">
     <div class="center">
-        <form action="">
-            <input type="text" name="nome" placeholder="Nome..." id="">
+        <form method="post" action="">
+            <input type="text" name="nome" placeholder="Nome..." id="" required>
             <div></div>
-            <input type="email" name="email" placeholder="E-mail..." id="">
+            <input type="email" name="email" placeholder="E-mail..." id="" required>
             <div></div>
-            <input type="text" name="telefone" placeholder="Telefone..." id="">
+            <input type="text" name="telefone" placeholder="Telefone..." id="" required>
             <div></div>
-            <textarea name="mensagem" placeholder="Sua Mensagem..."></textarea>
+            <textarea name="mensagem" placeholder="Sua Mensagem..." required></textarea>
             <div></div>
+            <input type="hidden" name="identificador" value="form_contato">
             <input type="submit" name="acao" value="Enviar">
         </form>
     </div>
