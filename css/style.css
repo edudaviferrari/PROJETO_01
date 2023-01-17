@@ -131,6 +131,7 @@ section.banner-container{
 }
 
 .banner-single{
+    display: none;
     position: absolute;
     left: 0;
     top: 0;
