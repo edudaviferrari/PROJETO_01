@@ -10,5 +10,3 @@ spl_autoload_register($autoLoad);
 require 'vendor/autoload.php';
 
 define('INCLUDE_PATH', 'http://localhost/Projeto_01/');
-
-?>

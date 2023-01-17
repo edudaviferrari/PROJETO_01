@@ -4,13 +4,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+require 'vendor/autoload.php';
+
 class Email
 {
     private $mailer;
 
     public function __construct($host, $username, $senha, $nome)
     {
-        $this->mailer = new PHPMailer;
+        
+        $this->mailer = new PHPMailer(true);
 
         $this->mailer->isSMTP();
         $this->mailer->Host = $host;
@@ -26,9 +29,9 @@ class Email
     }
 
 
-    public function enviarPara($meuemail, $meunome)
+    public function enviarPara($email, $nome)
     {
-        $this->mailer->addAddress($meuemail, $meunome);
+        $this->mailer->addAddress($email, $nome);
     }
 
     public function formatarEmail($info)

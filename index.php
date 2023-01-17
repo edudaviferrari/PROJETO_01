@@ -17,54 +17,7 @@
     <title>Projeto 01</title>
 </head>
 <body>
-<?php
-    if(isset($_POST['acao']) && $_POST['identificador'] == 'form_home'){
-        //Enviei o formulário
-        if($_POST['email'] != ''){
-            $email = $_POST['email'];
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-                //Tudo certo, é um email // Só enviar
-                $mail = new Email('smtp.kinghost.net','teste@clickvix.com.br','Click#2023','Teste Projeto Cadastro');
-                $mail->enviarPara('multivixcopiadora@gmail.com','Teste Email');
-                $corpo = "E-mail cadastrado na home do site:<hr>$email";
-                $info = array('Assunto'=>"Um Novo e-mail cadastrado",'Corpo'=>$corpo);
-                $mail->formatarEmail($info);
-                if($mail->enviarEmail()){
-                    echo '<script>alert("Enviado com sucesso!")</script>';
-                }else{
-                    echo '<script>alert("Algo deu errado")</script>';
-                }
-            }else{
-                echo '<script>alert("Não é um e-mail válido!")</script>';
-            }
-        }else{
-            echo '<script>alert("Campos vazios não são permitidos!")</script>';
-        }
-        
-    }else if(isset($_POST['acao']) && $_POST['identificador'] == 'form_contato'){
-        /*
-        $nome =$_POST['nome'];
-        $email = $_POST['email'];
-        $mensagem = $_POST['mensagem'];
-        $telefone = $_POST['telefone'];*/
-        $assunto = 'Nova Mensagem do Site!';
-        $corpo = '';
-        foreach ($_POST as $key => $value){
-            $corpo.=ucfirst($key).": ".$value;
-            $corpo.="<hr>";
-        }
-        $info = ['Assunto'=>$assunto,'Corpo'=>$corpo];
-        $mail = new Email('smtp.kinghost.net','teste@clickvix.com.br','Click#2023','Teste Projeto Cadastro');
-        $mail->enviarEmail('multivixcopiadora@gmail.com','Teste Email');
-        $mail->formatarEmail($info);
-        if($mail->enviarEmail()){
-            echo '<script>alert("Enviado com sucesso!")</script>';
-        }else{
-            echo '<script>alert("Algo deu errado")</script>';
-        }
-    }
-?>
-<base base="<?php INCLUDE_PATH; ?>" />
+<base base="<?php echo INCLUDE_PATH; ?>" />
     <?php
     $url = isset($_GET['url']) ? $_GET['url'] : 'home';
         switch($url){
@@ -76,7 +29,10 @@
         }
     ?>
 
-
+<div class="sucesso">Formulário enviado com sucesso!</div>
+<div class="overlay-loading">
+    <img src="<?php echo INCLUDE_PATH ?>image/ajax-loader.gif" alt="">
+</div>
 
 <header>
     <div class="center">
@@ -105,9 +61,7 @@
 
 <div class="container-principal">
 <?php
-
-    
-
+  
     if(file_exists('pages/'.$url.'.php')){
         include('pages/'.$url.'.php');
     }else{
@@ -137,5 +91,6 @@
     <script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 <?php } ?>
 <script src="<?php echo INCLUDE_PATH ?>js/efeitosHome.js"></script>
+<script src="<?php echo INCLUDE_PATH ?>js/formularios.js"></script>
 </body>
 </html>
