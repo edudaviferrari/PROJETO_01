@@ -23,11 +23,11 @@ $(function(){
 
     function changeSlide(){
         setInterval(function(){
-            $('.banner-single').eq(curSlide).stop().fadeOut(2000);
+            $('.banner-single').eq(curSlide).animate({'opacity':'0'},2000);
             curSlide++;
             if(curSlide > maxSlide)
                 curSlide = 0;
-            $('.banner-single').eq(curSlide).stop().fadeIn(2000);
+            $('.banner-single').eq(curSlide).animate({'opacity':'1'},2000);
             //Trocar bullets da navegação do slider
             $('.bullets span').removeClass('active-slider');
             $('.bullets span').eq(curSlide).addClass('active-slider');

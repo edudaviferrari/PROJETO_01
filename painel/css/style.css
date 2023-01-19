@@ -1,17 +1,18 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
 
-html, body{
+html,
+body {
     height: 100%;
     background: rgb(255, 255, 255);
 }
-
-.box-login{
-    box-shadow: 10px 10px 5px rgb(200,200,200);
+/*Página de Login*/
+.box-login {
+    box-shadow: 10px 10px 5px rgb(200, 200, 200);
     max-width: 600px;
     width: 95%;
     padding: 60px 2%;
@@ -19,11 +20,11 @@ html, body{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%)
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
 }
 
-.box-login h2{
+.box-login h2 {
     text-align: center;
     font-size: 19px;
     text-transform: uppercase;
@@ -33,7 +34,7 @@ html, body{
 }
 
 .box-login input[type=text],
-.box-login input[type=text]{
+.box-login input[type=password] {
     width: 100%;
     height: 40px;
     border: 1px solid #ccc;
@@ -41,7 +42,7 @@ html, body{
     margin-top: 8px;
 }
 
-.box-login input[type=submit]{
+.box-login input[type=submit] {
     width: 100px;
     height: 40px;
     cursor: pointer;
@@ -50,4 +51,50 @@ html, body{
     background-color: #1de9b6;
     color: white;
     border: 0;
+}
+
+/*Box erro do painel*/
+
+.erro-box {
+    width: 100%;
+    padding: 8px 2%;
+    text-align: center;
+    background: #f75353;
+    color: white;
+    font-size: 15px;
+}
+
+/*Painel de Controle*/
+
+.clear{clear: both;}
+
+.center{padding: 0 2%;margin: 0 auto;}
+
+div.menu{
+    overflow-y: auto;
+    height: 100%;
+    background: #455a64;
+    float: left;
+    width: 300px;
+}
+
+header{
+    float: left;
+    padding: 10px 0;
+    background: #78909c;
+    width: calc(100% - 300px);
+}
+
+.loggout a{
+    color: white;
+    font-size: 20px;
+    float: right;
+    text-decoration: none;
+}
+
+.menu-btn{
+    float: left;
+    cursor: pointer;
+    font-size: 23px;
+    color: white;
 }

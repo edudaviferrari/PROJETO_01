@@ -8,6 +8,10 @@ require 'vendor/autoload.php';
 
 class Email
 {
+    public static function logado(){
+        return isset($_SESSION['login']) ? true : false;
+    }
+
     private $mailer;
 
     public function __construct($host, $username, $senha, $nome)
