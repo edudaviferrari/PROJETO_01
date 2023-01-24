@@ -8,7 +8,7 @@
 html,
 body {
     height: 100%;
-    background: rgb(255, 255, 255);
+    background: rgb(212, 208, 208);
 }
 body{
     overflow-x: hidden;
@@ -107,7 +107,7 @@ div.menu{
     overflow-x: hidden;
     overflow-y: auto;
     height: 100%;
-    padding: 10px;
+    padding: 10px 0;
     position: fixed;
     background: #455a64;
     left: 0;
@@ -147,6 +147,29 @@ div.box-usuario{
     color: white;
     font-size: 15px;
     font-weight: normal;
+}
+/*ITEMS MENU*/
+.items-menu{
+    margin-top: 30px;
+}
+
+.items-menu h2{
+    text-align: left;
+    font-weight: 300;
+    font-size: 18px;
+    background: #2f3d42;
+    color: white;
+    padding: 8px;
+}
+
+.items-menu a{
+    display: block;
+    padding: 8px;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid #2f3d42;
 }
 
 /**CONTEUDO PRINCIPAL DO PAINEL**/

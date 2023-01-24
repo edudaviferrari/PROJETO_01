@@ -41,6 +41,21 @@ if (isset($_GET['loggout'])) {
                     <p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
                 </div><!--nome-usuario-->
             </div><!--box-usuario-->
+            <div class="items-menu">
+                <h2>Cadastro</h2>
+                    <a href="">Cadastrar Depoimento</a>
+                    <a href="">Cadastrar Serviço</a>
+                    <a href="">Cadastrar Slides</a>
+                <h2>Gestão</h2>
+                    <a href="">Listar Depoimentos</a>
+                    <a href="">Listar Serviços</a>
+                    <a href="">Listar Slides</a>
+                <h2>Administração do Painel</h2>
+                    <a href="">Editar Usuário</a>
+                    <a href="">Adicionar Usuário</a>
+                <h2>Configuração Geral</h2>
+                    <a href="">Editar</a>
+            </div><!--items-menu-->
         </div><!--menu-wraper-->
     </div><!--MENU-->
     <header>
@@ -57,20 +72,30 @@ if (isset($_GET['loggout'])) {
     <div class="clear"></div>
     <div class="content">
         <div class="box-content left w100">
+            <h2><i class="fa-solid fa-house-flag"></i> Painel de Controle</h2>
+            <div class="box-metricas">
+                <div class="box-metrica-single">
+                    <div class="box-metrica-wraper">
+                        <h2>Usuários Online</h2>
+                        <p>10</p>
+                    </div>
+                </div><!--box-metrica-single-->
 
+                <div class="box-metrica-single">
+                    <div class="box-metrica-wraper">
+                        <h2>Total de Visitas</h2>
+                        <p>10</p>
+                    </div>
+                </div><!--box-metrica-single-->
+
+                <div class="box-metrica-single">
+                    <div class="box-metrica-wraper">
+                        <h2>Visitas Hoje</h2>
+                        <p>3</p>
+                    </div>
+                </div><!--box-metrica-single-->
+            </div><!--BOX-METRICAS-->
         </div><!--box-content-->
-
-        <!-- <div class="box-content left w100">
-
-        </div>
-
-        <div class="box-content left w50">
-
-        </div>
-
-        <div class="box-content right w50">
-
-        </div> -->
         <div class="clear"></div>
     </div><!--CONTEUDO DO PAINEL-->
 
