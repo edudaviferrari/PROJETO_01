@@ -10,6 +10,9 @@ body {
     height: 100%;
     background: rgb(255, 255, 255);
 }
+body{
+    overflow-x: hidden;
+}
 /*Página de Login*/
 .box-login {
     box-shadow: 10px 10px 5px rgb(200, 200, 200);
@@ -99,7 +102,9 @@ header{
 
 /**MENU**/
 
+.menu-wraper{width: 300px;}
 div.menu{
+    overflow-x: hidden;
     overflow-y: auto;
     height: 100%;
     padding: 10px;
@@ -169,4 +174,26 @@ div.box-usuario{
     background: white;
     padding: 10px;
     margin-bottom: 10px;
+}
+
+/**MENU RESPONSIVO**/
+
+@media screen and (max-width: 768px){
+    .menu{
+        display: none;
+    }
+    .content{
+        width: 100%;
+        left: 0;
+    }
+    header{
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .menu-wraper{
+        width: 200px;
+    }
 }

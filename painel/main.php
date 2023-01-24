@@ -22,24 +22,26 @@ if (isset($_GET['loggout'])) {
 
 <body>
     <div class="menu">
-        <div class="box-usuario">
-            <?php
-                if($_SESSION['img'] == ''){
-            ?>
-                <div class="avatar-usuario">
-                    <i class="fa-solid fa-user"></i>
-                </div><!--avatar-usuario-->
-            <?php }else{ ?>
-                <div class="imagem-usuario">
-                    <img src="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $_SESSION['img']; ?>" alt="Imagem do usuário">
-                </div><!--imagem-usuario-->
+        <div class="menu-wraper">
+            <div class="box-usuario">
+                <?php
+                    if($_SESSION['img'] == ''){
+                ?>
+                    <div class="avatar-usuario">
+                        <i class="fa-solid fa-user"></i>
+                    </div><!--avatar-usuario-->
+                <?php }else{ ?>
+                    <div class="imagem-usuario">
+                        <img src="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $_SESSION['img']; ?>" alt="Imagem do usuário">
+                    </div><!--imagem-usuario-->
 
-            <?php } ?>
-            <div class="nome-usuario">
-                <p><?php echo $_SESSION['nome']; ?></p>
-                <p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
-            </div><!--nome-usuario-->
-        </div><!--box-usuario-->
+                <?php } ?>
+                <div class="nome-usuario">
+                    <p><?php echo $_SESSION['nome']; ?></p>
+                    <p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
+                </div><!--nome-usuario-->
+            </div><!--box-usuario-->
+        </div><!--menu-wraper-->
     </div><!--MENU-->
     <header>
         <div class="center">
@@ -47,7 +49,7 @@ if (isset($_GET['loggout'])) {
                 <i class="fa-solid fa-bars"></i>
             </div><!--menu-btn-->
             <div class="loggout">
-                <a href="<?php echo INCLUDE_PATH_PAINEL; ?>?loggout"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Sair</span></a>
+                <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Sair</span></a>
             </div><!--loggout-->
             <div class="clear"></div>
         </div>
@@ -71,6 +73,9 @@ if (isset($_GET['loggout'])) {
         </div> -->
         <div class="clear"></div>
     </div><!--CONTEUDO DO PAINEL-->
+
+    <script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 
 </body>
 
