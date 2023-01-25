@@ -264,18 +264,22 @@ div.box-usuario{
 
 /*TABELA RESPONSIVO*/
 .table-responsive{
-    max-width: 1280px;
     margin: 20px auto;
+    font-weight: 300;
 }
 
 .table-responsive .row:nth-of-type(1){
-    font-weight: bold;
-    border-bottom: 1px solid #CCC;
+    font-weight: normal;
+    background: #00bfa5;
+    padding: 10px;
+    color: white;
+    
 }
 
 .table-responsive .row{
     color: #777;
-    padding: 8px 0;
+    padding: 8px;
+    border-bottom: 1px solid #CCC;
 }
 
 .col{

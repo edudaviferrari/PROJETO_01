@@ -3,13 +3,20 @@
 session_start();
 date_default_timezone_set('America/Sao_Paulo');
 
-$autoLoad = function ($class) {
-    if (file_exists('classes/' . $class . '.php')) {
-        include('classes/' . $class . '.php');
+// $autoLoad = function ($class) {
+//     if (file_exists('classes/' . $class . '.php')) {
+//         include('classes/' . $class . '.php');
+//     }
+//     include ('classes/'.$class.'.php');
+// };
+$autoload = function($class){
+    if($class == 'Email'){
+        require_once('vendor/autoload.php');
     }
-    // include ('classes/'.$class.'.php');
+    include('classes/'.$class.'.php');
 };
-spl_autoload_register($autoLoad);
+
+spl_autoload_register($autoload);
 
 require 'vendor/autoload.php';
 
