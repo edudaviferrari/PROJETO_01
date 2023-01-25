@@ -1,11 +1,13 @@
 <?php
 
 session_start();
+date_default_timezone_set('America/Sao_Paulo');
+
 $autoLoad = function ($class) {
     if (file_exists('classes/' . $class . '.php')) {
         include('classes/' . $class . '.php');
     }
-    include ('classes/'.$class.'.php');
+    // include ('classes/'.$class.'.php');
 };
 spl_autoload_register($autoLoad);
 
@@ -20,6 +22,9 @@ define('HOST','localhost');
 define('USER','root');
 define('PASSWORD','');
 define('DATABASE','projeto_01');
+
+//Constante para o Painel de Controle
+define ('NOME_EMPRESA',"Eduardo Ferrari Desenvolvimento WEB");
 
 //FUNÇÕES
 function pegaCargo($cargo){

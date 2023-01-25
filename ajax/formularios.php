@@ -8,8 +8,8 @@ foreach ($_POST as $key => $value) {
     $corpo.="<hr>";
 }
 $info = ['Assunto' => $assunto, 'Corpo' => $corpo];
-$mail = new Email('smtp.kinghost.net', 'teste@clickvix.com.br', 'Click#2023', 'Teste');
-$mail->enviarEmail('teste@clickvix.com.br', 'Teste Email');
+$mail = new Email('Seu Host', 'Seu E-mail', 'Sua Senha', 'Nome');
+$mail->enviarEmail('E-mail', 'Nome');
 $mail->formatarEmail($info);
 if ($mail->enviarEmail()) {
     $data['sucesso'] = true;

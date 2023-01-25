@@ -82,6 +82,8 @@ header{
 }
 
 .loggout a{
+    padding: 0 20px;
+    position: relative;
     color: white;
     font-size: 20px;
     float: right;
@@ -138,6 +140,24 @@ div.box-usuario{
     color: #2f3d42;
 }
 
+.imagem-usuario{
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    position: relative;
+    border-radius: 50%;
+    border: 3px solid #2f3d42; 
+}
+
+.imagem-usuario img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
 .nome-usuario{
     text-align: center;
     margin-top: 10px;
@@ -155,8 +175,8 @@ div.box-usuario{
 
 .items-menu h2{
     text-align: left;
-    font-weight: 300;
-    font-size: 18px;
+    font-weight: normal;
+    font-size: 17px;
     background: #2f3d42;
     color: white;
     padding: 8px;
@@ -196,14 +216,90 @@ div.box-usuario{
 .box-content{
     background: white;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.box-content h2{
+    font-weight: 400;
+    font-size: 22px;
+}
+
+/*Box Metricas*/
+
+.box-metricas{
+	margin-top:16px;
+	padding:0 15px;
+}
+
+.box-metrica-single{
+	float: left;
+	position: relative;
+	width: 33.3%;
+	background: #F4B03E;
+	border: 5px solid white;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(2){
+	background: #E05C4E;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(3){
+	background: #0091ea;
+}
+
+.box-metrica-wraper{
+	padding: 10px 20px;
+	text-align: left;
+	color: white;
+}
+
+.box-metrica-wraper h2{
+	font-size: 28px;
+}
+
+.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 26px;
+}
+
+/*TABELA RESPONSIVO*/
+.table-responsive{
+    max-width: 1280px;
+    margin: 20px auto;
+}
+
+.table-responsive .row:nth-of-type(1){
+    font-weight: bold;
+    border-bottom: 1px solid #CCC;
+}
+
+.table-responsive .row{
+    color: #777;
+    padding: 8px 0;
+}
+
+.col{
+    float: left;
+    width: 50%;
 }
 
 /**MENU RESPONSIVO**/
+@media screen and (max-width: 1200px){
+    .box-metrica-single{
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .box-metrica-single{
+        width: 100%;
+        height: auto;
+    }
+}
 
 @media screen and (max-width: 768px){
-    .menu{
-        display: none;
+    .box-metrica-single{
+        width: 100%;
     }
     .content{
         width: 100%;
@@ -212,6 +308,13 @@ div.box-usuario{
     header{
         left: 0;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .box-single-metrica{
+        width: 100%;
+        padding-top: 40%;
     }
 }
 

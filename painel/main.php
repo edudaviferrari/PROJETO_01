@@ -43,7 +43,7 @@ if (isset($_GET['loggout'])) {
             </div><!--box-usuario-->
             <div class="items-menu">
                 <h2>Cadastro</h2>
-                    <a href="">Cadastrar Depoimento</a>
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
                     <a href="">Cadastrar Serviço</a>
                     <a href="">Cadastrar Slides</a>
                 <h2>Gestão</h2>
@@ -63,40 +63,18 @@ if (isset($_GET['loggout'])) {
             <div class="menu-btn">
                 <i class="fa-solid fa-bars"></i>
             </div><!--menu-btn-->
+            
             <div class="loggout">
                 <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Sair</span></a>
+                <a href="<?php echo INCLUDE_PATH_PAINEL ?>"><i class="fa-solid fa-house"></i> <span>Página Inicial</span></a>
+                
             </div><!--loggout-->
             <div class="clear"></div>
         </div>
     </header>
     <div class="clear"></div>
     <div class="content">
-        <div class="box-content left w100">
-            <h2><i class="fa-solid fa-house-flag"></i> Painel de Controle</h2>
-            <div class="box-metricas">
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Usuários Online</h2>
-                        <p>10</p>
-                    </div>
-                </div><!--box-metrica-single-->
-
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Total de Visitas</h2>
-                        <p>10</p>
-                    </div>
-                </div><!--box-metrica-single-->
-
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Visitas Hoje</h2>
-                        <p>3</p>
-                    </div>
-                </div><!--box-metrica-single-->
-            </div><!--BOX-METRICAS-->
-        </div><!--box-content-->
-        <div class="clear"></div>
+        <?php Painel::carregarPagina(); ?>        
     </div><!--CONTEUDO DO PAINEL-->
 
     <script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
