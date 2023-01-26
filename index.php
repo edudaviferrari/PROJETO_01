@@ -1,5 +1,6 @@
 <?php require('config.php'); //chamando o arquivo config.php?>
 <?php Site::updateUsuarioOnline(); ?>
+<?php Site::contador(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

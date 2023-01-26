@@ -24,6 +24,8 @@ require 'vendor/autoload.php';
 define('INCLUDE_PATH', 'http://localhost/Projeto_01/');
 define('INCLUDE_PATH_PAINEL', INCLUDE_PATH . 'painel/');
 
+define('BASE_DIR_PAINEL',__DIR__.'/painel');
+
 //Conectar com o Banco de Dados
 define('HOST','localhost');
 define('USER','root');

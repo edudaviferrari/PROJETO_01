@@ -1,5 +1,15 @@
 <?php
     $usuariosOnline = Painel::listarUsuariosOnline();
+
+    $pegarVisitasTotais = MySql::conectar()->prepare("SELECT * FROM `tb_admin.visitas`");
+    $pegarVisitasTotais->execute();
+
+    $pegarVisitasTotais = $pegarVisitasTotais->rowCount();
+
+    $pegarVisitasHoje = MySql::conectar()->prepare("SELECT * FROM `tb_admin.visitas` WHERE dia = ?");
+    $pegarVisitasHoje->execute([date('Y-m-d')]);
+
+    $pegarVisitasHoje = $pegarVisitasHoje->rowCount();
 ?>
 <div class="box-content w100">
     <h2><i class="fa-solid fa-house-flag"></i> Painel de Controle - <?php echo NOME_EMPRESA; ?></h2>
@@ -14,14 +24,14 @@
         <div class="box-metrica-single">
             <div class="box-metrica-wraper">
                 <h2>Total de Visitas</h2>
-                <p></p>
+                <p><?php echo $pegarVisitasTotais; ?></p>
             </div>
         </div><!--box-metrica-single-->
 
         <div class="box-metrica-single">
             <div class="box-metrica-wraper">
                 <h2>Visitas Hoje</h2>
-                <p>3</p>
+                <p><?php echo $pegarVisitasHoje; ?></p>
             </div>
         </div><!--box-metrica-single-->
     </div><!--BOX-METRICAS-->
