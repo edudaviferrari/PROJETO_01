@@ -351,6 +351,14 @@ div.box-usuario{
     color: white;
 }
 
+.menu-active{
+    background: #3a4b51;
+}
+
+.menu-active::before{
+    content: '> ';
+}
+
 /**MENU RESPONSIVO**/
 @media screen and (max-width: 1200px){
     .box-metrica-single{
