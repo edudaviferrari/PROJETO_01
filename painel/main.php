@@ -52,7 +52,7 @@ if (isset($_GET['loggout'])) {
                     <a <?php selecionadoMenu('listar-slides'); ?> href="">Listar Slides</a>
                 <h2>Administração do Painel</h2>
                     <a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
-                    <a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="">Adicionar Usuário</a>
+                    <a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuário</a>
                 <h2>Configuração Geral</h2>
                     <a <?php selecionadoMenu('editar-site'); ?> href="">Editar Site</a>
             </div><!--items-menu-->

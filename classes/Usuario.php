@@ -11,5 +11,9 @@ class Usuario{
             return false;
         }
     }
+
+    public static function userExists($user){
+
+    }
     
 }

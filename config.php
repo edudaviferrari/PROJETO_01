@@ -35,15 +35,12 @@ define('DATABASE','projeto_01');
 //Constante para o Painel de Controle
 define ('NOME_EMPRESA',"Eduardo Ferrari Desenvolvimento WEB");
 
-//FUNÇÕES DO PAINEL
-function pegaCargo($cargo){
-    $arr =[
-        '0' => 'Normal',
-        '1' => 'Sub Administrador',
-        '2' => 'Administrador'
-    ];
+//VARIAVEIS CARGO PAINEL
 
-        return $arr[$cargo];
+
+//FUNÇÕES DO PAINEL
+function pegaCargo($indice){
+    return Painel::$cargos[$indice];
 }
 
 function selecionadoMenu($par){
@@ -66,5 +63,6 @@ function verificaPermissaoPagina($permissao){
         return;
     }else{
         include('painel/pages/permissao_negada.php');
+        die();
     }
 }
