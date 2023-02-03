@@ -37,8 +37,9 @@
                     }else{
                         //Apenas cadastrar no banco de dados!
                         $usuario = new Usuario();
-
-                        Painel::alert('sucesso','O usuário '.$login.' Foi realizado com sucesso');
+                        $imagem = Painel::uploadFile($imagem);
+                        $usuario->cadastrarUsuario($login,$senha,$imagem,$nome,$cargo);
+                        Painel::alert('sucesso','O cadastro do usuário '.$login.' Foi realizado com sucesso');
                     }
                 }
 
